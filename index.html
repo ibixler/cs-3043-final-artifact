@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play game.</tw-noscript></noscript></tw-story>
-<tw-storydata name="game" startnode="3" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="FB8AE0E2-DDD4-4BFF-9C57-592013247761" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="story intro" tags="" position="750,350" size="100,100">Unfortunately your grandfather has died. In his will he left you his coveted repair shop. He always tried to fight for the consumer. His legacy was that of an upstanding community member. He was also a curmudgeonly old bastard. You loved him.
+<tw-storydata name="game" startnode="3" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="FB8AE0E2-DDD4-4BFF-9C57-592013247761" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">const func = ()=>console.log("hello world");</script><tw-passagedata pid="1" name="story intro" tags="" position="725,175" size="100,100">Unfortunately your grandfather has died. In his will he left you his coveted repair shop. He always tried to fight for the consumer. His legacy was that of an upstanding community member. He was also a curmudgeonly old bastard. You loved him.
 
 [[damn.|frameworks]]
 
@@ -20,32 +20,11 @@
 
 [[Begin|begin prompt]] </tw-passagedata><tw-passagedata pid="4" name="frameworks" tags="" position="1075,250" size="100,100">Choose an ethical framework:
 
-[[Rule Utilitarianism|RU]]
-[[Kantianism|KT]]
+
 [[Social Contract Theory|SCT]]
-
+[[Act Utilitarianism|AU]]
 (set: $framework to &quot;&quot;)
-</tw-passagedata><tw-passagedata pid="5" name="KT" tags="" position="1200,525" size="100,100">Kantianism is an ethical theory developed by Immanuel Kant, which emphasizes duty, moral law, and the inherent dignity of rational beings. It is a deontological theory, meaning that morality is based on adherence to rules or duties rather than consequences.
-
-At the core of Kantian ethics is the Categorical Imperative, a principle that helps determine whether an action is morally permissible. The most well-known formulations of the Categorical Imperative are:
-
-Universalizability Principle – Act only according to a maxim that you can will to become a universal law. (If everyone followed the same rule, would it still be morally acceptable?)
-Humanity Principle – Treat humanity, whether in yourself or others, always as an end and never merely as a means. (People should never be used purely as tools for someone else&#39;s goals.)
-Autonomy Principle – Act as though you are legislating universal moral laws, recognizing that rational beings have intrinsic moral worth and the ability to govern themselves.
-Kantianism prioritizes intentions over consequences, arguing that an action is morally right if it is done out of duty and in accordance with moral law, regardless of the outcome.
-
-[[back|frameworks]]
-(set: $framework to &quot;KT&quot;)
-
-[[Pick Kantianism|begin]]</tw-passagedata><tw-passagedata pid="6" name="RU" tags="" position="1075,525" size="100,100">
-(set: $test to $test + 1)
-
-Rule utilitarianism is a moral theory that evaluates the rightness or wrongness of actions based on rules that, if consistently followed, would produce the greatest overall happiness or utility. Unlike act utilitarianism, which assesses individual actions on a case-by-case basis, rule utilitarianism focuses on establishing general principles that lead to the best consequences in the long run. The key idea is that adhering to these rules generally results in greater well-being than making decisions based on immediate outcomes alone.
-
-[[back|frameworks]]
-
-(set: $framework to &quot;RU&quot;)
-[[Pick Rule Utilitarianism|begin]]</tw-passagedata><tw-passagedata pid="7" name="SCT" tags="" position="950,525" size="100,100">
+(set: $socialCredit to 0)</tw-passagedata><tw-passagedata pid="5" name="SCT" tags="" position="950,525" size="100,100">
 Social contract theory is a philosophical concept that explores the legitimacy of political authority and the origins of society. It posits that individuals voluntarily enter into an implicit or explicit agreement—the social contract—where they give up some personal freedoms in exchange for protection, order, and the benefits of living in a structured community. This theory is commonly associated with thinkers like Thomas Hobbes, John Locke, and Jean-Jacques Rousseau, who had differing views on the nature of the contract and the ideal form of government.
 
 Hobbes argued that without a strong central authority, life would be &quot;nasty, brutish, and short,&quot; so individuals must submit to an absolute sovereign for security.
@@ -54,6 +33,7 @@ Rousseau emphasized the &quot;general will,&quot; arguing that legitimate politi
 In modern political philosophy, social contract theory continues to influence discussions on democracy, justice, and human rights.
 
 (set: $framework to &quot;SCT&quot;)
+(set: $socialCredit to $socialCredit+100)
 
 [[back|frameworks]]
 
@@ -61,7 +41,77 @@ In modern political philosophy, social contract theory continues to influence di
 
 
 
-</tw-passagedata><tw-passagedata pid="8" name="begin" tags="" position="1075,700" size="100,100"></tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="6" name="begin" tags="" position="1075,700" size="100,100">Social Credit: $socialCredit
+Excellent, thank you!
+
+Here are a few credits, good luck!
+
+[[Next|sc0]]</tw-passagedata><tw-passagedata pid="7" name="AU" tags="" position="1225,525" size="100,100">									
+(set: $framework to &quot;AU&quot;)
+(set: $socialCredit to $socialCredit+100)
+[[back|frameworks]]
+
+[[Pick Socaial Contract Theory|begin]]
+
+</tw-passagedata><tw-passagedata pid="8" name="sc0" tags="" position="1075,825" size="100,100">Social Credit: $socialCredit
+Your first customer is here. They have an iPhone 6. It&#39;s old but it works fine for them. They say that they can’t make it through the day anymore. They could keep rocking it, provided they replace the battery. Apple no longer makes a battery for this phone. 
+* You can sell them a new phone, booming profits for the day. (link: &quot;pick&quot;)[
+	(set: $socialCredit to $socialCredit - 100)
+	(go-to: &quot;sc1&quot;)
+]
+* You can tell them that they are out of luck because Apple no longer makes the parts. (link: &quot;pick&quot;)[
+	(set: $socialCredit to $socialCredit - 25)
+	(go-to: &quot;sc1&quot;)
+]
+* You tell them that you have a third party battery, which the manufacturer has not approved, but will work.(link: &quot;pick&quot;)[
+	(set: $socialCredit to $socialCredit + 100)
+	(go-to: &quot;sc1&quot;)
+]</tw-passagedata><tw-passagedata pid="9" name="sc1" tags="" position="1075,950" size="100,100">Social Credit: $socialCredit
+A teenager walks into your store, they have a broken screen. They ask you how much it might cost to fix.
+
+* You can provide a list of options from OEM parts to the cheapest 3rd party display that doesn’t even use the same display tech. (link: &quot;pick&quot;)[
+	(set: $socialCredit to $socialCredit + 100)
+	(go-to: &quot;sc2&quot;)
+]
+* You can tell them that to perform a proper repair, you have to use the OEM display (link: &quot;pick&quot;)[
+	(set: $socialCredit to $socialCredit - 25)
+	(go-to: &quot;sc2&quot;)
+]</tw-passagedata><tw-passagedata pid="10" name="sc2" tags="" position="1075,1075" size="100,100">Social Credit: $socialCredit
+
+You go to the back to check the computer. Bloop
+
+Seems like you have an email.
+
+Hello ,
+
+I am reaching out on behalf of BoardCo. We have a selection of fine board repair tools. From tweezers to microscopes we have it all. I can set you up with an account today. We have starter packs with attractive prices.
+* Soldering iron, microscope, and associated supplies. (Your grandfather left you a wealth of tools, they’re not the newest style, but they work.) 200 Social Credit(link: &quot;pick&quot;)[
+	(set: $socialCredit to $socialCredit - 200)
+    (set: $fancyTools to true)
+	(go-to: &quot;sc3&quot;)
+]
+* Brand new toolkit (everything someone would need for a typical repair) -200 social credit (link: &quot;pick&quot;)[
+	(set: $socialCredit to $socialCredit - 200)
+	(go-to: &quot;sc3&quot;)
+]
+
+* Tell the guy to get lost 0 social credit  (link: &quot;pick&quot;)[
+	(set: $socialCredit to $socialCredit - 0)
+	(go-to: &quot;sc3&quot;)
+]
+</tw-passagedata><tw-passagedata pid="11" name="sc3" tags="" position="1075,1200" size="100,100">Social Credit: $socialCredit
+
+A mom walks in with her 3 kids, they’ve tried to flush their moms phone down the toilet. She’s busy so she hasn’t had time to back up. She understands she’ll need a new phone, but she asks if there’s anything you can do to get her pictures back.
+* Refer her to someone you know who has board repair skills. +75 social credit
+* Tell her you can try yourself, you need the right tools though. (if: $fancyTools is true)[(link: &quot;pick&quot;)[
+	(set: $socialCredit to $socialCredit +150)
+	(go-to: &quot;end&quot;)
+]]
+* Tell her there is noting to be done, the same thing she heard at the Verizon store. -25 social credit [(link: &quot;pick&quot;)[
+	(set: $socialCredit to $socialCredit +150)
+	(go-to: &quot;end&quot;)
+]
+</tw-passagedata><tw-passagedata pid="12" name="end" tags="" position="1075,1325" size="100,100">thanks for playing you did well, asshole</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

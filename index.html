@@ -9,22 +9,25 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play game.</tw-noscript></noscript></tw-story>
-<tw-storydata name="game" startnode="3" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="FB8AE0E2-DDD4-4BFF-9C57-592013247761" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">const func = ()=>console.log("hello world");</script><tw-passagedata pid="1" name="story intro" tags="" position="725,175" size="100,100">Unfortunately your grandfather has died. In his will he left you his coveted repair shop. He always tried to fight for the consumer. His legacy was that of an upstanding community member. He was also a curmudgeonly old bastard. You loved him.
+<tw-storydata name="game" startnode="3" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="FB8AE0E2-DDD4-4BFF-9C57-592013247761" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">const func = ()=>console.log("hello world");</script><tw-passagedata pid="1" name="story intro" tags="" position="1800,200" size="100,100">Unfortunately your grandfather has died...
+In his will he left you his coveted repair shop. He always tried to fight for the consumer and his legacy was that of an upstanding community member.
+He was also a curmudgeonly old bastard.
+You loved him.
 
 [[Damn.|frameworks]]
 
-(set: $test to 0)</tw-passagedata><tw-passagedata pid="2" name="begin prompt" tags="" position="550,250" size="100,100">Do you wish to begin?
+(set: $test to 0)</tw-passagedata><tw-passagedata pid="2" name="begin prompt" tags="" position="1600,200" size="100,100">Do you wish to begin (for real this time)?
 
-[[Yes|story intro]]
-[[No|begin prompt]] </tw-passagedata><tw-passagedata pid="3" name="welcom" tags="" position="275,450" size="100,100">Welcome to repair shop simulator.
+[[Yeah!|story intro]]
+No (click-replace: &quot;No&quot;)[ That&#39;s rough! Try choosing the other option.]</tw-passagedata><tw-passagedata pid="3" name="welcome" tags="" position="1700,50" size="100,100">Welcome to our repair shop &quot;simulator&quot;. This game is intended to introduce you to the motivation behind the Right-to-Repair movement.
 
-[[Begin|begin prompt]] </tw-passagedata><tw-passagedata pid="4" name="frameworks" tags="" position="1075,250" size="100,100">Choose an ethical framework:
+[[Begin|begin prompt]] </tw-passagedata><tw-passagedata pid="4" name="frameworks" tags="" position="1650,350" size="200,100">You know your grandfather would only have entrusted his shop to you if he believed you&#39;d run it ethically. To honor his legacy, you decide to set some guidelines for yourself about how you&#39;ll run the shop and deal with ambiguous scenarios during the day-to-day operations. To this end, you select an ethical framework to follow... 
 
+Choose an ethical framework you&#39;d like to learn more about:
 [[Social Contract Theory|SCT]]
 [[Act Utilitarianism|AU]]
-(set: $framework to &quot;&quot;)
-(set: $socialCredit to 0)</tw-passagedata><tw-passagedata pid="5" name="SCT" tags="" position="975,400" size="100,100">
-Social contract theory is a philosophical concept that explores the legitimacy of political authority and the origins of society. It posits that individuals voluntarily enter into an implicit or explicit agreement—the social contract—where they give up some personal freedoms in exchange for protection, order, and the benefits of living in a structured community. This theory is commonly associated with thinkers like Thomas Hobbes, John Locke, and Jean-Jacques Rousseau, who had differing views on the nature of the contract and the ideal form of government.
+
+(set: $framework to &quot;&quot;)</tw-passagedata><tw-passagedata pid="5" name="SCT" tags="" position="1600,500" size="100,100">Social contract theory is a philosophical concept that explores the legitimacy of political authority and the origins of society. It posits that individuals voluntarily enter into an implicit or explicit agreement—the social contract—where they give up some personal freedoms in exchange for protection, order, and the benefits of living in a structured community. This theory is commonly associated with thinkers like Thomas Hobbes, John Locke, and Jean-Jacques Rousseau, who had differing views on the nature of the contract and the ideal form of government.
 
 Hobbes argued that without a strong central authority, life would be &quot;nasty, brutish, and short,&quot; so individuals must submit to an absolute sovereign for security.
 Locke believed the contract should protect natural rights (life, liberty, and property) and that governments should be limited and based on consent.
@@ -34,38 +37,32 @@ In modern political philosophy, social contract theory continues to influence di
 *copied from ChatGpt
 
 (set: $framework to &quot;SCT&quot;)
+
+[[Back|frameworks]]
+[[Pick Social Contract Theory|begin]]</tw-passagedata><tw-passagedata pid="6" name="begin" tags="" position="1700,650" size="100,100">Excellent, thank you.
+
+Here&#39;s some credit to start with, good luck!
 (set: $socialCredit to $socialCredit+100)
+Social Credit: $socialCredit
 
-[[back|frameworks]]
+[[Next|sc0]]</tw-passagedata><tw-passagedata pid="7" name="AU" tags="" position="1800,500" size="100,100">Put simply, Act Utilitarianism is a viable ethical framework based on evaluating the effects of an individual action within its context.
 
-[[Pick Socaial Contract Theory|begin]]
+As Nathanson explains, &quot;Act utilitarians believe that whenever we are deciding what to do, we should perform the action that will create the &#39;&#39;greatest net utility&#39;&#39;. In their view, the principle of utility—do whatever will produce the best overall results—should be applied on a &#39;&#39;case by case basis&#39;&#39;. The right action in any situation is the one that yields more utility (i.e. creates more well-being) than other available actions.&quot; (Nathanson)
 
-
-
-</tw-passagedata><tw-passagedata pid="6" name="begin" tags="" position="1075,700" size="100,100">Social Credit: $socialCredit
-Excellent, thank you!
-
-Here are a few credits, good luck!
-
-[[Next|sc0]]</tw-passagedata><tw-passagedata pid="7" name="AU" tags="" position="1175,400" size="100,100">Rule utilitarianism is a form of utilitarianism, a moral theory that suggests actions should be evaluated based on their outcomes, specifically in terms of maximizing overall happiness or well-being. Unlike act utilitarianism, which focuses on the consequences of individual actions, rule utilitarianism emphasizes following rules that, when generally followed, tend to produce the greatest good for the greatest number.
-
-In rule utilitarianism, we assess the utility of adopting certain rules, rather than evaluating the consequences of each individual act. A rule is deemed morally right if, when followed by everyone, it leads to better overall outcomes than any other possible rule. In other words, rule utilitarianism advocates for creating and adhering to rules that generally promote the greatest amount of happiness or well-being, even if in some specific instances breaking the rule might seem to produce a better outcome.
-
-For example, the rule &quot;do not lie&quot; may generally lead to better outcomes for society by fostering trust and cooperation, even though lying in certain situations might appear to lead to a better outcome for an individual. Rule utilitarianism seeks to create a consistent and fair framework for decision-making while still promoting overall well-being.
-
-*coppied from ChatGpt
+This creates interesting moral dilemmas where taking an action that is traditionally considered immoral because it violates a rule could be ethical under Act Utilitarianism because it produces the most utility.
 
 (set: $framework to &quot;AU&quot;)
-(set: $socialCredit to $socialCredit+100)
-[[back|frameworks]]
 
-[[Pick Socaial Contract Theory|begin]]
+[[Back|frameworks]]
+[[Pick Act Utilitarianism|begin]]
 
-</tw-passagedata><tw-passagedata pid="8" name="sc0" tags="" position="1075,825" size="100,100">Social Credit: $socialCredit
 
-Your first customer is here. They have an iPhone 6. It&#39;s old but it works fine for them. They say that they can’t make it through the day anymore. They could keep rocking it, provided they replace the battery. Apple no longer makes a battery for this phone.
 
-* Sell them a new phone, booming profits for the day. (link: &quot;pick&quot;)[
+Nathanson, S. (n.d.). Utilitarianism, Act and Rule. Utilitarianism, Act and Rule | Internet Encyclopedia of Philosophy. Retrieved March 6, 2025, from https://iep.utm.edu/util-a-r/</tw-passagedata><tw-passagedata pid="8" name="sc0" tags="" position="1600,800" size="100,100">Social Credit: $socialCredit
+
+Your first customer is here! They have an iPhone 6, it&#39;s old but it works fine for them. They say that they can’t make it through the day anymore. They could keep rocking it, provided they replace the battery, although Apple no longer makes a battery for this phone.
+
+* Sell them a new phone, raking in booming profits for the day. (link: &quot;pick&quot;)[
 	(set: $socialCredit to $socialCredit - 100)
 	(go-to: &quot;sc1&quot;)
 ]
@@ -73,10 +70,10 @@ Your first customer is here. They have an iPhone 6. It&#39;s old but it works fi
 	(set: $socialCredit to $socialCredit - 25)
 	(go-to: &quot;sc1&quot;)
 ]
-* Tell them that you have a third party battery, which the manufacturer has not approved, but will work. (link: &quot;pick&quot;)[
+* Tell them that you have a third party battery that should work, although it is unapproved by the manufacturer. (link: &quot;pick&quot;)[
 	(set: $socialCredit to $socialCredit + 100)
 	(go-to: &quot;sc1&quot;)
-]</tw-passagedata><tw-passagedata pid="9" name="sc1" tags="" position="1075,950" size="100,100">Social Credit: $socialCredit
+]</tw-passagedata><tw-passagedata pid="9" name="sc1" tags="" position="1800,800" size="100,100">Social Credit: $socialCredit
 A teenager walks into your store, they have a broken screen. They ask you how much it might cost to fix.
 
 * Provide a list of options from OEM parts to the cheapest 3rd party display that doesn’t even use the same display tech. (link: &quot;pick&quot;)[
@@ -86,7 +83,7 @@ A teenager walks into your store, they have a broken screen. They ask you how mu
 * Tell them that to perform a proper repair, you have to use the OEM display (link: &quot;pick&quot;)[
 	(set: $socialCredit to $socialCredit - 25)
 	(go-to: &quot;sc2&quot;)
-]</tw-passagedata><tw-passagedata pid="10" name="sc2" tags="" position="1075,1075" size="100,100">Social Credit: $socialCredit
+]</tw-passagedata><tw-passagedata pid="10" name="sc2" tags="" position="1600,950" size="100,100">Social Credit: $socialCredit
 
 You go to the back to check the computer. Bloop
 
@@ -96,48 +93,58 @@ Hello ,
 
 I am reaching out on behalf of BoardCo. We have a selection of fine board repair tools. From tweezers to microscopes we have it all. I can set you up with an account today. We have starter packs with attractive prices.
 
-* Soldering iron, microscope, and associated supplies. (Your grandfather left you a wealth of tools, they’re not the newest style, but they work.) 200 Social Credit (link: &quot;pick&quot;)[
+* Your grandfather left you a wealth of tools in the shop, including a soldering iron and a microscope. They’re not the newest style, but they work. You will have to buy some associated supplies though. (100 Social Credit) (link: &quot;pick&quot;)[
+	(set: $socialCredit to $socialCredit - 100)
+    (set: $fancyTools to false)
+	(go-to: &quot;sc3&quot;)
+]
+* Purchase a brand new toolkit, including everything someone would need for a range of typical repairs. (200 Social Credit) (link: &quot;pick&quot;)[
 	(set: $socialCredit to $socialCredit - 200)
-    (set: $fancyTools to true)
+	(set: $fancyTools to true)
+    (go-to: &quot;sc3&quot;)
+]
+* Tell the guy to get lost. (free) (link: &quot;pick&quot;)[
+	(set: $asshole to true)
 	(go-to: &quot;sc3&quot;)
 ]
-* Brand new toolkit (everything someone would need for a typical repair) 200 social credit (link: &quot;pick&quot;)[
-	(set: $socialCredit to $socialCredit - 200)
-	(go-to: &quot;sc3&quot;)
-]
-* Tell the guy to get lost. free (link: &quot;pick&quot;)[
-	(set: $socialCredit to $socialCredit - 0)
-	(go-to: &quot;sc3&quot;)
-]
-</tw-passagedata><tw-passagedata pid="11" name="sc3" tags="" position="1075,1200" size="100,100">Social Credit: $socialCredit
+</tw-passagedata><tw-passagedata pid="11" name="sc3" tags="" position="1800,950" size="100,100">Social Credit: $socialCredit
 
 A mom walks in with her 3 kids, they’ve tried to flush their moms phone down the toilet. She’s busy so she hasn’t had time to back up. She understands she’ll need a new phone, but she asks if there’s anything you can do to get her pictures back.
 
-* Refer her to someone you know who has board repair skills. [(link: &quot;pick&quot;)[
+* Refer her to someone you know who has board repair skills/tools. [(link: &quot;pick&quot;)[
 	(set: $socialCredit to $socialCredit +75)
 	(go-to: &quot;end&quot;)
 ]
 
-* Take a stab at it, you need the right tools though. (if: $fancyTools is true)[(link: &quot;pick&quot;)[
+* Offer to take a stab at it, but you&#39;ll need the right tools... (if: $fancyTools is true)[(link: &quot;pick&quot;)[
 	(set: $socialCredit to $socialCredit +150)
 	(go-to: &quot;end&quot;)
 ]]
-* There is noting to be done, the same thing she heard at the Verizon store. [(link: &quot;pick&quot;)[
+* There is nothing to be done, the same thing she heard at the Verizon store. [(link: &quot;pick&quot;)[
 	(set: $socialCredit to $socialCredit - 25)
 	(go-to: &quot;end&quot;)
 ]
-</tw-passagedata><tw-passagedata pid="12" name="end" tags="" position="1075,1325" size="100,100">thanks for playing you did well, asshole
-[[play again|welcom]]
+</tw-passagedata><tw-passagedata pid="12" name="end" tags="" position="1700,1100" size="100,100">(if: $framework is &quot;SCT&quot;) [
+	(if: $socialCredit &lt; 0)[
+		Good try, however the decisions you made did not align with social contract theory. Social contract theory dictates a contract between two entities, in this case, consumer and business. The goal is to be as honest, helpful, and straightforward with the customer as possible. To honor this implicit contract, you as the business owner has to be forthcoming with the customer.
+	]
+	(else-if: $socialCredit &lt; 100)[
+		Nice job, you conducted your business ethically. The unspoken contract between you and your customers remains unbroken.
+	]
+	(else-if: $socialCredit &gt; 100)[
+		Excellent! Your grandfather would be proud. You have upheld the implicit contract between you and your customers. If all businesses were like this, the world would be a better place.
+	]
+]
+(else-if: $framework is &quot;AU&quot;)[
+	(set: $badEnd to &quot;It seems you didn&#39;t try to maximize utility enough when deciding on what actions to take! As a reminder, Act Utilitarianism is based on maximizing the utility generated by a specific action.&quot;)
+    (set: $midEnd to &quot;Good work thinking like an Act Utilitarian. Based on y9ur Social Credit, it seems like you learned how to prioritize the utility created by your actions!&quot;)
+    (set: $goodEnd to &quot;Amazing work, your grandfather would be proud! By learning to evaluate what actions affect the most benefit, your business starts taking off thanks to word of mouth from customers you&#39;ve helped along the way.&quot;)
+    
+    (cond: $socialCredit &lt; 0, $badEnd, $socialCredit &lt;= 100, $midEnd, $socialCredit &gt; 100, $goodEnd, &quot;(if you see this the conditonal evaluated to default!)&quot;) 
+]
 
-(if: $framework is &quot;SCT&quot; and $socialCredit &lt; 0)[
-        Good try, however the decisions you made did not align with social contract theory. Social contract theory dictates a contract between two entities, in this case, consumer and business. The goal is to be as honest, helpful, and straightforward with the customer as possible. In this case there is an implicit contract that you the business owner, has with the customer to be as honest as possible
-]
-(else-if: $framework is &quot;SCT&quot; and $socialCredit &lt; 100)[
-	Nice job, you conducted your business ethically. The unspoken contract between you and your customers remains unbroken.
-]
-(else-if: $framework is &quot;SCT&quot; and $socialCredit &gt; 100)[
-	Excellent! Your grandfather would be proud. You have upheld the implicit contract between you and your customers. If all businesses were like this, the world would be a better place.
-]</tw-passagedata></tw-storydata>
+Thanks for playing!
+[[play again|welcome]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
